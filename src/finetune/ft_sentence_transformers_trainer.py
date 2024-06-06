@@ -28,12 +28,13 @@ with open(os.path.join(project_dir, "data/ft_train_dataset.json"), "r", encoding
     train_content = json.loads(f.read())
 
 train_anchor, train_positive = [], []
-for query_id, context_id in eval_content['relevant_docs'].items():
-    train_anchor.append(eval_content['queries'][query_id])
-    train_positive.append(eval_content['corpus'][context_id[0]])
+for query_id, context_id in train_content['relevant_docs'].items():
+    train_anchor.append(train_content['queries'][query_id])
+    train_positive.append(train_content['corpus'][context_id[0]])
 
 train_dataset = Dataset.from_dict({"positive": train_positive, "anchor": train_anchor})
 
+print(train_dataset)
 print(train_dataset[0:5])
 
 # Load a model
@@ -57,7 +58,7 @@ train_loss = MultipleNegativesRankingLoss(model)
 args = SentenceTransformerTrainingArguments(
     output_dir=f"ft_{model_name}",  # output directory and hugging face model ID
     num_train_epochs=5,  # number of epochs
-    per_device_train_batch_size=4,  # train batch size
+    per_device_train_batch_size=2,  # train batch size
     gradient_accumulation_steps=2,  # for a global batch size of 512
     per_device_eval_batch_size=4,  # evaluation batch size
     warmup_ratio=0.1,  # warmup ratio

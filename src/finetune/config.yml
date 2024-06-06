@@ -1,0 +1,23 @@
+task: sentence-transformers:pair
+base_model: /workspace/code/embedding_model_exp/models/bge-base-zh-v1.5
+project_name: autotrain-pair
+log: tensorboard
+backend: local
+
+data:
+  path: jclian91/embedding_exp_semiconductor
+  train_split: train
+  valid_split: dev
+  column_mapping:
+    sentence1_column: anchor
+    sentence2_column: positive
+
+params:
+  max_seq_length: 512
+  epochs: 5
+  batch_size: 4
+  lr: 2e-5
+  optimizer: adamw_torch_fused
+  scheduler: cosine
+  gradient_accumulation: 2
+  mixed_precision: fp16

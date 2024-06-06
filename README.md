@@ -4,6 +4,13 @@
 
 ### 2. Embedding模型微调
 
+using AutoTrain:
+
+```commandline
+cd ./src/finetune
+CUDA_VISIBLE_DEVICES=0 autotrain --config config.yml
+```
+
 ### 3. Embedding模型量化
 
 ### 参考文献
