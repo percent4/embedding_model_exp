@@ -17,12 +17,16 @@
 python src/finetune/ft_sentence_transformers_trainer.py
 ```
 
-- using AutoTrain:
+- Using AutoTrain:
 
 ```commandline
 cd ./src/finetune
 CUDA_VISIBLE_DEVICES=0 autotrain --config config.yml
 ```
+
+- Using LlamaIndex Finetune Embeddings:
+
+可查阅`参考文献5`。
 
 ### 3. Embedding模型量化
 

@@ -70,7 +70,7 @@ args = SentenceTransformerTrainingArguments(
     batch_sampler=BatchSamplers.NO_DUPLICATES,
     eval_strategy="epoch",  # evaluate after each epoch
     save_strategy="epoch",  # save after each epoch
-    logging_steps=5,  # log every 10 steps
+    logging_steps=10,  # log every 10 steps
     save_total_limit=3,  # save only the last 3 models
     load_best_model_at_end=True,  # load the best model when training ends
     metric_for_best_model=f"eval_{model_name}_cosine_ndcg@10",  # Optimizing for the best ndcg@10 score
@@ -90,3 +90,6 @@ trainer = SentenceTransformerTrainer(
 trainer.train()
 trainer.save_model()
 print(f"cost time: {time.time() - start_time:.2f}s")
+"""
+cost time: 63.10s using 1 GPU: NVIDIA A800-SXM4-80GB
+"""
