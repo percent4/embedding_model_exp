@@ -1,4 +1,4 @@
-本项目用于Embedding模型的相关实验，包括Embedding模型评估、Embedding模型微调、Embedding模型量化等。
+本项目用于Embedding模型的相关实验，包括Embedding模型评估、ReRank模型微调、Embedding模型微调、Embedding模型量化等。
 
 ### 1. Embedding模型评估
 
@@ -14,7 +14,7 @@
 - Using `sentence-transformers v3`:
 
 ```commandline
-python src/finetune/ft_sentence_transformers_trainer.py
+python src/finetune/ft_embedding.py
 ```
 
 - Using AutoTrain:
@@ -28,7 +28,9 @@ CUDA_VISIBLE_DEVICES=0 autotrain --config config.yml
 
 可查阅`参考文献5`。
 
-### 3. Embedding模型量化
+### 3. ReRank模型微调
+
+### 4. Embedding模型量化
 
 ### 参考文献
 

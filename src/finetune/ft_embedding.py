@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # @place: Pudong, Shanghai
-# @file: ft_sentence_transformers_trainer.py
+# @file: ft_embedding.py
 # @time: 2024/6/6 17:54
 import os
 import json

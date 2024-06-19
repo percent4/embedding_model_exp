@@ -1,0 +1,7 @@
+datasets==2.20.0
+llama_index==0.10.46
+numpy==1.25.0
+pandas==2.2.2
+python-dotenv==1.0.1
+sentence_transformers==3.0.0
+torch==2.3.1

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # @place: Pudong, Shanghai
-# @file: make_ft_corpus.py
+# @file: make_ft_embedding_corpus.py
 # @time: 2024/6/6 16:56
 import os
 from llama_index.legacy.finetuning import (
