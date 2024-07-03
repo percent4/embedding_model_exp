@@ -38,6 +38,10 @@ CUDA_VISIBLE_DEVICES=0 autotrain --config config.yml
 
 - 基础测试: src/quantization/basic_test.py
 
+### 5. Embedding Usage(应用)
+
+- 图片搜索示例: src/usage/image_search.py
+
 ### 参考文献
 
 1. Training and Finetuning Embedding Models with Sentence Transformers v3: [https://huggingface.co/blog/train-sentence-transformers](https://huggingface.co/blog/train-sentence-transformers)
