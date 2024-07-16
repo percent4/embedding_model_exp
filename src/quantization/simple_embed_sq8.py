@@ -20,7 +20,7 @@ with open(os.path.join(project_dir, 'data/dengyue.json'), 'r') as f:
 # add vector
 sentences_embeddings = np.load(os.path.join(project_dir, "data/dengyue_embedding.npz"))['arr_0']
 
-collection_name = "dengyue_sq8"
+collection_name = "dengyue"
 # Connects to a server
 client = MilvusClient(uri="http://localhost:19530", db_name="default")
 # List all collection names
@@ -65,7 +65,7 @@ if collection_name not in collections:
 
 # Single vector search
 query = "阿波罗登月计划"
-query = "神舟五号 杨利伟"
+# query = "神舟五号 杨利伟"
 # query = "北京航天城"
 query_embedding = get_embedding([query])
 
@@ -74,7 +74,7 @@ res = client.search(
     collection_name=collection_name,
     data=query_embedding,
     limit=3,
-    search_params={"metric_type": "L2", "params": {}},
+    search_params={"metric_type": "IP", "params": {}},
     output_fields=['text']
 )
 print(len(res[0]), res[0][0])
